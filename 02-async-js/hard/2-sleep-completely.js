@@ -3,6 +3,12 @@
  * During this time the thread should not be able to do anything else.
  */
 
-function sleep (seconds) {
+function sleep(seconds) {
+  let time = Date.now();
 
+  while (Date.now() - time < seconds) {}
+
+  console.log("executed");
 }
+
+sleep(3000);
